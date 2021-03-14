@@ -3,7 +3,7 @@ class TrackingsController < ApplicationController
   before_action :find_tracking, only: %i[show update destroy]
 
   def index
-    render json: @illness.trackings
+    render json: @book.trackings
   end
 
   def show
@@ -42,7 +42,7 @@ class TrackingsController < ApplicationController
   private
 
   def tracking_params
-    params.require(:tracking).permit(:id, :date, :page_no)
+    params.require(:tracking).permit(:book_id, :date, :page_no)
   end
 
   def find_tracking
@@ -50,6 +50,6 @@ class TrackingsController < ApplicationController
   end
 
   def find_book
-    @illness = Book.find(params[:illness_id])
+    @book = Book.find(params[:book_id])
   end
 end

@@ -50,6 +50,6 @@ class BooksController < ApplicationController
   end
 
   def find_book
-    @illness = Book.find(params[:id])
+    @book = Book.find(params[:id])
   end
 end
