@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Book API' do
-
   let!(:user) { create(:user) }
   let!(:book) { create(:book) }
   let!(:trackings) { create_list(:tracking, 10, book_id: book.id) }

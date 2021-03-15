@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Books API' do
-
   let!(:user) { create(:user) }
   let!(:books) { create_list(:book, 10, user_id: user.id) }
   let(:user_id) { user.id }
   let(:id) { books.first.id }
- 
+
   describe 'GET users/:user_id/books' do
     before { get "/users/#{user_id}/books" }
 
@@ -50,9 +49,10 @@ RSpec.describe 'Books API' do
     end
   end
 
- 
   describe 'POST post "/users/:user_id/books' do
-    let(:valid_attributes) { { book: { name: 'Book1', author: 'Author1', genre: 'Genre1', pages: 100, user_id: user_id } } }
+    let(:valid_attributes) do
+      { book: { name: 'Book1', author: 'Author1', genre: 'Genre1', pages: 100, user_id: user_id } }
+    end
 
     context 'when request attributes are valid' do
       before { post "/users/#{user_id}/books", params: valid_attributes }
@@ -74,7 +74,7 @@ RSpec.describe 'Books API' do
       end
     end
   end
- 
+
   describe 'PUT /users/:user_id/books/:id' do
     let(:valid_attributes) { { book: { name: 'Book1' } } }
 

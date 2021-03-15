@@ -4,5 +4,5 @@ RSpec.describe Tracking, type: :model do
   end
   describe 'validations' do
     it { should validate_presence_of(:date) }
-  end  
+  end
 end

@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     render json: @user.books
-    #   @books = Book.all 
+    #   @books = Book.all
     #   render json: @books
   end
 
@@ -32,8 +32,8 @@ class BooksController < ApplicationController
 
   def destroy
     if @book
-    @book.destroy
-    render json: { message: 'Book succesfully deleted' }, status: 200
+      @book.destroy
+      render json: { message: 'Book succesfully deleted' }, status: 200
     else
       render json: { error: 'Unable to delete Book' }, status: 400
     end
