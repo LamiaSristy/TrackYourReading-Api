@@ -1,6 +1,6 @@
 # TrackYourReading--Api
 
-The objective of this project was to create a mobile app, which can track any specific things and presented with a list of things to be measured. This is the Back-End part, where I have created API and endpoints. For the Front_End I have used React, with Rdux for state management.
+The objective of this project was to create a mobile app, which can track any specific things and presented with a list of things to be measured. This is the Back-End part, where I have created API and endpoints. For the Front_End I have used React, with Redux for state management.
 
 **The Back End API**
 
