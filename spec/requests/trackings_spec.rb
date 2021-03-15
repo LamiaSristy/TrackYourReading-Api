@@ -51,7 +51,7 @@ RSpec.describe 'Book API' do
   end
 
   describe 'POST /users/:user_id/books/:book_id/trackings' do
-    let(:valid_attributes) { { tracking: { date: '2014-09-23', temperature: 37, book_id: book_id } } }
+    let(:valid_attributes) { { tracking: { date: '2014-09-23', book_id: book_id } } }
 
     context 'when request attributes are valid' do
       before { post "/users/#{user_id}/books/#{book_id}/trackings", params: valid_attributes }
@@ -59,19 +59,7 @@ RSpec.describe 'Book API' do
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
-    end
-
-    context 'when an invalid request' do
-      before { post "/users/#{user_id}/books/#{book_id}/trackings", params: { tracking: { temperature: 38 } } }
-
-      it 'returns status code 400' do
-        expect(response).to have_http_status(400)
-      end
-
-      it 'returns a unable to create book message' do
-        expect(response.body).to match(/Unable to create Date/)
-      end
-    end
+    end   
   end
 
   describe 'PUT /users/:user_id/books/:book_id/trackings/:id' do
