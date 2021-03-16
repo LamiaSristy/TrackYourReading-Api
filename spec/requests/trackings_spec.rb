@@ -59,7 +59,7 @@ RSpec.describe 'Book API' do
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
-    end   
+    end
   end
 
   describe 'PUT /users/:user_id/books/:book_id/trackings/:id' do
